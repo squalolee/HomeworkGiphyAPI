@@ -11,9 +11,10 @@ function displayButtons () {
     }
 }
 
-$("#newTopic").on("click", function (event) {
+function addSearch () {
     event.preventDefault();
     var search = $("#insertTopic").val().toLowerCase().trim();
+    console.log("search")
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + search + "&api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&limit=10";
 
     $.ajax({
@@ -29,11 +30,11 @@ $("#newTopic").on("click", function (event) {
         }
         else {
             gifSearches.push(search);
-            renderButtons();
+            displayButtons();
         }
 
     });    
-});
+};
 
 function displayGifs () {
     var search = $(this).attr("data-name");
@@ -65,18 +66,6 @@ function displayGifs () {
 
     });
 };
-// function playGif () {
-
-//     if ($(this).attr("data-state") == "still") {
-//         $(this).html("<img src'" + $(this).attr("data-animate") + "'>");
-//         $(this).attr("data-state", "animate");
-//     }
-//     else {
-//         $(this).html("<img src='" + $(this).attr("data-still") + "'>");
-//         $(this).attr("data-state", "still");
-//     }
-// };
-
 function playGif () {
   var state = $(this).attr("data-state");
   console.log("clicked")
@@ -92,5 +81,6 @@ function playGif () {
 
 $(document).on("click", ".topic", displayGifs);
 $(document).on("click", ".gif", playGif);
+$(document).on("click", "#newtopic", addSearch);
 
 displayButtons();
