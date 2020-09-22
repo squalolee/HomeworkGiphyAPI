@@ -1,4 +1,4 @@
-var gifSearches = ["baseball", "basketball", "football"];
+var gifSearches = ["baseball", "basketball", "football", "Dogs", "birds", "storm", "DnD"];
 
 function displayButtons () {
     $(".gifButtons").empty();
