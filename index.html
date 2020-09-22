@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="row">
+        <div class="row" id="header">
             <div class="col-md-12">
                 <div class="gifButtons">
                     
@@ -18,15 +18,16 @@
         </div>
         <div class="row">
             <div class="col-md-9 container-fluid">
+                <div>
+                    <form id="gif">
+                        <label>What gifs would you like to search for?</label><br>
+                        <input type="text" id="insertTopic"></label><br>
+                        <button class="btn btn-primary" id="newtopic">Add</button><br>
+                    </form>
+                </div>
+                
                 <div class="gifsDisplay">
                     
-                </div>
-                <div class="col-md-3">
-                    <form id="gif">
-                        <label ></label>What gifs would you like to search for?<br>
-                        <input type="text" id="insertTopic"></label><br>
-                        <button class="btn btn-primary" id="newtopic"></button><br>
-                    </form>
                 </div>
             </div>
         </div>
